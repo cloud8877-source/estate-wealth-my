@@ -1,5 +1,5 @@
 import { Question, QuestionOption } from '../../types';
-import { Card } from '../ui/Card';
+import { Card } from '../ui/card';
 
 interface QuestionProps {
   question: Question;
