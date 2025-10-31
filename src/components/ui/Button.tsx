@@ -1,56 +1,62 @@
-import React from 'react'
-import { clsx } from 'clsx'
+import React from 'react';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'ghost'
-  size?: 'sm' | 'md' | 'lg'
-  children: React.ReactNode
-  asChild?: boolean
+  variant?: 'default' | 'primary' | 'secondary' | 'outline' | 'ghost' | 'link';
+  size?: 'sm' | 'md' | 'lg';
+  asChild?: boolean;
+  children: React.ReactNode;
 }
 
-export default function Button({
-  variant = 'primary',
-  size = 'md',
-  children,
-  className,
-  asChild = false,
-  ...props
-}: ButtonProps) {
-  const baseClasses = 'font-semibold rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2'
-  
-  const variantClasses = {
-    primary: 'bg-primary-500 hover:bg-primary-600 text-white',
-    secondary: 'bg-white text-primary-500 border-2 border-primary-500 hover:bg-primary-500 hover:text-white',
-    ghost: 'text-primary-500 hover:bg-primary-50'
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className = '', variant = 'default', size = 'md', asChild = false, children, ...props }, ref) => {
+    const baseStyles = 'inline-flex items-center justify-center font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 rounded-md';
+    
+    const variants = {
+      default: 'bg-slate-900 text-white hover:bg-slate-800',
+      primary: 'bg-blue-600 text-white hover:bg-blue-700',
+      secondary: 'bg-slate-100 text-slate-900 hover:bg-slate-200',
+      outline: 'border border-slate-200 bg-white hover:bg-slate-100',
+      ghost: 'hover:bg-slate-100 hover:text-slate-900',
+      link: 'text-slate-900 underline-offset-4 hover:underline',
+    };
+    
+    const sizes = {
+      sm: 'h-9 px-3 text-sm',
+      md: 'h-10 px-4 py-2',
+      lg: 'h-11 px-8',
+    };
+    
+    const variantStyles = variants[variant];
+    const sizeStyles = sizes[size];
+    const classes = `${baseStyles} ${variantStyles} ${sizeStyles} ${className}`;
+    
+    // If asChild is true, we'll pass the className to the child element
+    if (asChild) {
+      // Expect a single React element as child and clone it with our classes
+      if (React.isValidElement(children)) {
+        return React.cloneElement(children as any, {
+          className: `${classes} ${(children.props as any).className || ''}`,
+          ref,
+        });
+      }
+      console.warn('Button: asChild is true but children is not a valid React element');
+      return <>{children}</>;
+    }
+    
+    return (
+      <button
+        ref={ref}
+        className={classes}
+        {...props}
+      >
+        {children}
+      </button>
+    );
   }
-  
-  const sizeClasses = {
-    sm: 'py-2 px-4 text-sm',
-    md: 'py-3 px-6 text-base',
-    lg: 'py-4 px-8 text-lg'
-  }
+);
 
-  const buttonClasses = clsx(
-    baseClasses,
-    variantClasses[variant],
-    sizeClasses[size],
-    className
-  )
+Button.displayName = 'Button';
 
-  if (asChild && React.isValidElement(children)) {
-    return React.cloneElement(children, {
-      className: clsx(buttonClasses, children.props.className),
-      ...props
-    })
-  }
-
-  return (
-    <button
-      className={buttonClasses}
-      {...props}
-    >
-      {children}
-    </button>
-  )
-}
-// Build trigger - Sat Nov  1 02:50:34 +08 2025
+export default Button;
+export { Button };
+// Force Cloudflare Pages deployment - Sat Nov  1 03:20:00 +08 2025
