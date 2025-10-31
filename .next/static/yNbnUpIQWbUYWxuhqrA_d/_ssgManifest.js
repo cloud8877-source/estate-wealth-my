@@ -1,1 +1,0 @@
-self.__SSG_MANIFEST=new Set(["\u002Fquiz\u002Fresults\u002F[persona]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
