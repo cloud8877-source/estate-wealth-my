@@ -56,7 +56,7 @@ ADMIN_EMAIL=admin@estatewealthmy.com
 
 2. **Configure Build Settings**
    - **Build command:** `npm run build`
-   - **Build output directory:** `.next`
+   - **Build output directory:** `out`
    - **Node version:** 18
 
 3. **Set Environment Variables**

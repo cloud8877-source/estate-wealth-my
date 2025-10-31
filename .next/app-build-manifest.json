@@ -1,15 +1,59 @@
 {
   "pages": {
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+    "/_not-found/page": [
+      "static/chunks/webpack-26aeb8e94e045039.js",
+      "static/chunks/fd9d1056-cce117dc4e21e608.js",
+      "static/chunks/117-7c2a27d6bc00515f.js",
+      "static/chunks/main-app-7f2e1caec5969f39.js",
+      "static/chunks/app/_not-found/page-756e6e8a259ba367.js"
     ],
     "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
+      "static/chunks/webpack-26aeb8e94e045039.js",
+      "static/chunks/fd9d1056-cce117dc4e21e608.js",
+      "static/chunks/117-7c2a27d6bc00515f.js",
+      "static/chunks/main-app-7f2e1caec5969f39.js",
+      "static/css/fa94459fb15d2fbc.css",
+      "static/chunks/app/layout-8b0513830aeb9f40.js"
+    ],
+    "/quiz/email-capture/page": [
+      "static/chunks/webpack-26aeb8e94e045039.js",
+      "static/chunks/fd9d1056-cce117dc4e21e608.js",
+      "static/chunks/117-7c2a27d6bc00515f.js",
+      "static/chunks/main-app-7f2e1caec5969f39.js",
+      "static/chunks/678-efb84d74eefd8096.js",
+      "static/chunks/app/quiz/email-capture/page-870e7ccc0de71e12.js"
+    ],
+    "/quiz/questions/page": [
+      "static/chunks/webpack-26aeb8e94e045039.js",
+      "static/chunks/fd9d1056-cce117dc4e21e608.js",
+      "static/chunks/117-7c2a27d6bc00515f.js",
+      "static/chunks/main-app-7f2e1caec5969f39.js",
+      "static/chunks/678-efb84d74eefd8096.js",
+      "static/chunks/app/quiz/questions/page-ef2266283c8f0046.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-26aeb8e94e045039.js",
+      "static/chunks/fd9d1056-cce117dc4e21e608.js",
+      "static/chunks/117-7c2a27d6bc00515f.js",
+      "static/chunks/main-app-7f2e1caec5969f39.js",
+      "static/chunks/678-efb84d74eefd8096.js",
+      "static/chunks/app/page-552f14ce00136a85.js"
+    ],
+    "/quiz/page": [
+      "static/chunks/webpack-26aeb8e94e045039.js",
+      "static/chunks/fd9d1056-cce117dc4e21e608.js",
+      "static/chunks/117-7c2a27d6bc00515f.js",
+      "static/chunks/main-app-7f2e1caec5969f39.js",
+      "static/chunks/678-efb84d74eefd8096.js",
+      "static/chunks/app/quiz/page-decd53e7202458f3.js"
+    ],
+    "/quiz/results/[persona]/page": [
+      "static/chunks/webpack-26aeb8e94e045039.js",
+      "static/chunks/fd9d1056-cce117dc4e21e608.js",
+      "static/chunks/117-7c2a27d6bc00515f.js",
+      "static/chunks/main-app-7f2e1caec5969f39.js",
+      "static/chunks/678-efb84d74eefd8096.js",
+      "static/chunks/app/quiz/results/[persona]/page-db93c2f0e77ff3ce.js"
     ]
   }
 }
