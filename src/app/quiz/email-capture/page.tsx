@@ -48,8 +48,32 @@ export default function EmailCapture() {
       // Calculate persona
       const personaSlug = calculatePersona(answers)
       
-      // In a real app, you would send this data to your API
-      // For now, we'll just redirect to the results page
+      // Send data to n8n webhook for processing
+      const webhookUrl = process.env.NEXT_PUBLIC_N8N_WEBHOOK_QUIZ_RESULT
+      
+      if (webhookUrl && webhookUrl !== 'https://your-n8n-instance.com/webhook/quiz-result') {
+        const response = await fetch(webhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            answers: answers,
+            persona: personaSlug,
+            timestamp: new Date().toISOString(),
+            source: 'estate-wealth-my-quiz'
+          }),
+        })
+
+        if (!response.ok) {
+          console.warn('n8n webhook submission failed, but continuing with user flow')
+          // Continue even if webhook fails - don't block user experience
+        }
+      }
+      
+      // Redirect to results page (regardless of webhook success)
       router.push(`/quiz/results/${personaSlug}`)
       
     } catch (err) {

@@ -1,17 +1,21 @@
-'use client'
-
 import React from 'react'
-import { useParams } from 'next/navigation'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import Button from '@/components/ui/Button'
 import Card from '@/components/ui/Card'
-import { getPersonaBySlug } from '@/lib/quiz-logic'
+import { getPersonaBySlug, getAllPersonas } from '@/lib/quiz-logic'
 import { ShieldCheckIcon, CalendarIcon, DocumentArrowDownIcon } from '@heroicons/react/24/outline'
 
-export default function ResultsPage() {
-  const params = useParams()
-  const personaSlug = params.persona as string
+// Generate static params for all personas
+export async function generateStaticParams() {
+  const personas = getAllPersonas()
+  return personas.map((persona) => ({
+    persona: persona.slug,
+  }))
+}
+
+export default function ResultsPage({ params }: { params: { persona: string } }) {
+  const personaSlug = params.persona
   const persona = getPersonaBySlug(personaSlug)
 
   if (!persona) {
