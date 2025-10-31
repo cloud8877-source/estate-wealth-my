@@ -1,32 +1,30 @@
-import React from 'react';
+import React from 'react'
+import { clsx } from 'clsx'
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label: string;
-  error?: string;
+  label?: string
+  error?: string
 }
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>(({ label, name, error, ...props }, ref) => {
-  const inputId = name || `input-${Math.random()}`;
+export default function Input({ label, error, className, ...props }: InputProps) {
   return (
-    <div>
-      <label htmlFor={inputId} className="block text-sm font-medium text-primary-700 dark:text-primary-300 mb-1">
-        {label}
-      </label>
+    <div className="w-full">
+      {label && (
+        <label className="block text-sm font-medium text-gray-700 mb-2">
+          {label}
+        </label>
+      )}
       <input
-        id={inputId}
-        name={name}
-        ref={ref}
-        className={`w-full px-4 py-2 border rounded-lg bg-primary-50 dark:bg-primary-700 dark:border-primary-600 dark:text-primary-100 dark:placeholder-primary-400 focus:outline-none focus:ring-2 transition ${
-          error ? 'border-red-500 focus:ring-red-400' : 'border-primary-300 focus:ring-accent-500 dark:focus:border-accent-500'
-        }`}
+        className={clsx(
+          'w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-colors duration-200',
+          error && 'border-error-500 focus:border-error-500 focus:ring-error-500/20',
+          className
+        )}
         {...props}
       />
-      {error && <p className="mt-1 text-sm text-red-600 dark:text-red-400">{error}</p>}
+      {error && (
+        <p className="mt-1 text-sm text-error-600">{error}</p>
+      )}
     </div>
-  );
-});
-
-Input.displayName = 'Input';
-
-export { Input };
-export default Input;
+  )
+}

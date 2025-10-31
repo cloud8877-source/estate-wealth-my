@@ -1,0 +1,215 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "text": "What best describes your current family status?",
+      "description": "This helps us understand your family dynamics and responsibilities.",
+      "type": "single",
+      "options": [
+        {
+          "id": "q1a",
+          "text": "Young professional, no children",
+          "value": "young-professional"
+        },
+        {
+          "id": "q1b",
+          "text": "Parent with young children (under 18)",
+          "value": "parent-young"
+        },
+        {
+          "id": "q1c",
+          "text": "Parent with adult children",
+          "value": "parent-adult"
+        },
+        {
+          "id": "q1d",
+          "text": "Business owner with dependents",
+          "value": "business-owner"
+        },
+        {
+          "id": "q1e",
+          "text": "Retired or near retirement",
+          "value": "retired"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "What is your primary estate planning concern?",
+      "description": "This helps us prioritize what matters most to you.",
+      "type": "single",
+      "options": [
+        {
+          "id": "q2a",
+          "text": "Protecting my children's future if something happens to me",
+          "value": "protect-children"
+        },
+        {
+          "id": "q2b",
+          "text": "Ensuring my business survives without me",
+          "value": "business-survival"
+        },
+        {
+          "id": "q2c",
+          "text": "Avoiding family conflicts over inheritance",
+          "value": "avoid-conflicts"
+        },
+        {
+          "id": "q2d",
+          "text": "Minimizing tax burden on my estate",
+          "value": "minimize-taxes"
+        },
+        {
+          "id": "q2e",
+          "text": "Making sure my assets go to the right people",
+          "value": "right-people"
+        },
+        {
+          "id": "q2f",
+          "text": "I'm not sure - that's why I'm here",
+          "value": "not-sure"
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "text": "What is your current estate planning status?",
+      "description": "This helps us understand where you are in your planning journey.",
+      "type": "single",
+      "options": [
+        {
+          "id": "q3a",
+          "text": "I have nothing in place (0% prepared)",
+          "value": "nothing"
+        },
+        {
+          "id": "q3b",
+          "text": "I have a basic will written myself",
+          "value": "self-will"
+        },
+        {
+          "id": "q3c",
+          "text": "I have a will drafted by a lawyer",
+          "value": "lawyer-will"
+        },
+        {
+          "id": "q3d",
+          "text": "I have a will + some trusts",
+          "value": "will-trusts"
+        },
+        {
+          "id": "q3e",
+          "text": "I have a comprehensive plan (will, trusts, power of attorney)",
+          "value": "comprehensive"
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "text": "Which emotion best describes how you feel about estate planning?",
+      "description": "Your emotional state helps us understand your motivation and concerns.",
+      "type": "single",
+      "options": [
+        {
+          "id": "q4a",
+          "text": "Terrified - I'm worried my family will struggle financially without me",
+          "value": "terrified"
+        },
+        {
+          "id": "q4b",
+          "text": "Frustrated - I keep putting this off",
+          "value": "frustrated"
+        },
+        {
+          "id": "q4c",
+          "text": "Confused - I don't know where to start",
+          "value": "confused"
+        },
+        {
+          "id": "q4d",
+          "text": "Concerned - I have ex-partners or complex family situations",
+          "value": "ex-partner"
+        },
+        {
+          "id": "q4e",
+          "text": "Motivated - I want the best possible plan for my family",
+          "value": "motivated"
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "text": "How would you describe your asset complexity?",
+      "description": "This helps us understand the scope of planning needed.",
+      "type": "single",
+      "options": [
+        {
+          "id": "q5a",
+          "text": "Simple (savings, EPF, one property)",
+          "value": "simple"
+        },
+        {
+          "id": "q5b",
+          "text": "Moderate (multiple properties, stocks, insurance)",
+          "value": "moderate"
+        },
+        {
+          "id": "q5c",
+          "text": "Complex (business ownership, international assets, trusts)",
+          "value": "complex"
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "text": "What is your timeline for getting estate planning done?",
+      "description": "This helps us understand your urgency and planning stage.",
+      "type": "single",
+      "options": [
+        {
+          "id": "q6a",
+          "text": "Urgent - I need this done ASAP",
+          "value": "urgent"
+        },
+        {
+          "id": "q6b",
+          "text": "Soon - Within 3 months",
+          "value": "soon"
+        },
+        {
+          "id": "q6c",
+          "text": "Planning ahead - Within 6-12 months",
+          "value": "planning"
+        },
+        {
+          "id": "q6d",
+          "text": "Just researching - No timeline yet",
+          "value": "researching"
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "text": "How do you feel about the budget for estate planning?",
+      "description": "This helps us recommend appropriate solutions for your situation.",
+      "type": "single",
+      "options": [
+        {
+          "id": "q7a",
+          "text": "I want the most affordable option",
+          "value": "affordable"
+        },
+        {
+          "id": "q7b",
+          "text": "I'll pay for quality, but want to understand costs",
+          "value": "quality"
+        },
+        {
+          "id": "q7c",
+          "text": "Budget is not a concern - I want the best protection",
+          "value": "no-concern"
+        }
+      ]
+    }
+  ]
+}
