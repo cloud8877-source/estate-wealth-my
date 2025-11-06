@@ -1,0 +1,23 @@
+# *
+User-agent: *
+Allow: /
+
+# Disallow admin or private pages (if any)
+Disallow: /api/
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://estatewealthmy.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 0
+
+# Major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

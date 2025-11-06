@@ -1,37 +1,49 @@
 # Dependencies
 node_modules
+/.pnp
+.pnp.js
 
-# Build output
-dist
-dist-ssr
-*.local
-.next
-out
+# Testing
+/coverage
 
-# Environment variables
-.env
-.env.local
-.env.production
+# Next.js
+/.next/
+/out/
 
-# Editor directories
-.vscode/*
-!.vscode/extensions.json
-.idea
+# Production
+/build
+
+# Misc
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+*.pem
 
-# Logs
-logs
-*.log
+# Debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-# Genkit
-.genkit/
+# Local env files
+.env*.local
+.env
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE
+.vscode
+.idea
+
+# Temporary files
+*.md.backup
+
+# Instruction/Documentation files
+Instuction /
+figma_mcp_setup_documentation.md
+figma_mcp_setup_todo.md
+updated_cline_mcp_settings.json
+firebase-debug.log
+mcp/
