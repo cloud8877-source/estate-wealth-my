@@ -7,7 +7,7 @@ export default function Services() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Protection Packages for Every Family</h2>
-          <p className="text-xl text-gray-600">From simple wills to complex wealth structures. Pricing from RM 2,500.</p>
+          <p className="text-xl text-gray-600">From simple wills to complex wealth structures.</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -16,7 +16,7 @@ export default function Services() {
             <div className="text-center mb-6">
               <div className="text-4xl mb-3">🛡️</div>
               <h3 className="text-2xl font-bold mb-2">Essential Will</h3>
-              <div className="text-3xl font-bold text-primary-600 mb-1">RM 2,500</div>
+              
               <p className="text-sm text-gray-500">Most popular for young families</p>
             </div>
 
@@ -35,11 +35,11 @@ export default function Services() {
               </li>
               <li className="flex items-start">
                 <span className="text-green-600 mr-2">✓</span>
-                <span className="text-gray-700">Digital + physical copies</span>
+                <span className="text-gray-700">Client hardcopy provided</span>
               </li>
               <li className="flex items-start">
                 <span className="text-green-600 mr-2">✓</span>
-                <span className="text-gray-700">2-year free storage</span>
+                <span className="text-gray-700">Lifetime vault storage</span>
               </li>
             </ul>
 
@@ -61,7 +61,7 @@ export default function Services() {
             <div className="text-center mb-6">
               <div className="text-4xl mb-3">💼</div>
               <h3 className="text-2xl font-bold mb-2">Complete Protection</h3>
-              <div className="text-3xl font-bold text-primary-600 mb-1">RM 6,500</div>
+              
               <p className="text-sm text-gray-500">Recommended for most families</p>
             </div>
 
@@ -80,7 +80,7 @@ export default function Services() {
               </li>
               <li className="flex items-start">
                 <span className="text-green-600 mr-2">✓</span>
-                <span className="text-gray-700">Lasting Power of Attorney (LPA)</span>
+                <span className="text-gray-700">Comprehensive review of nominations</span>
               </li>
               <li className="flex items-start">
                 <span className="text-green-600 mr-2">✓</span>
@@ -88,7 +88,7 @@ export default function Services() {
               </li>
               <li className="flex items-start">
                 <span className="text-green-600 mr-2">✓</span>
-                <span className="text-gray-700">Priority support + lifetime updates</span>
+                <span className="text-gray-700">Ongoing support and lifetime document access</span>
               </li>
             </ul>
 
@@ -106,7 +106,7 @@ export default function Services() {
             <div className="text-center mb-6">
               <div className="text-4xl mb-3">👑</div>
               <h3 className="text-2xl font-bold mb-2">Wealth Builder</h3>
-              <div className="text-3xl font-bold text-primary-600 mb-1">RM 15,000+</div>
+              
               <p className="text-sm text-gray-500">For high-net-worth families</p>
             </div>
 
@@ -117,7 +117,7 @@ export default function Services() {
               </li>
               <li className="flex items-start">
                 <span className="text-green-600 mr-2">✓</span>
-                <span className="text-gray-700">RHB Living Trust setup</span>
+                <span className="text-gray-700">Living trust consultation</span>
               </li>
               <li className="flex items-start">
                 <span className="text-green-600 mr-2">✓</span>
@@ -133,7 +133,7 @@ export default function Services() {
               </li>
               <li className="flex items-start">
                 <span className="text-green-600 mr-2">✓</span>
-                <span className="text-gray-700">Dedicated estate planner</span>
+                <span className="text-gray-700">Personalized estate planning guidance</span>
               </li>
             </ul>
 

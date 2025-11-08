@@ -8,7 +8,7 @@ export default function Hero() {
         {/* Trust Badge */}
         <div className="text-center mb-6">
           <span className="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-bold">
-            ✓ Trusted by 500+ Malaysian Families | RHB Trustee Partner | Estate Planning Malaysia
+            ✓ Trusted by 500+ Malaysian Families | Estate Planning Malaysia
           </span>
         </div>
 
@@ -39,10 +39,6 @@ export default function Hero() {
             <div className="flex items-center gap-2">
               <span className="text-green-600 text-xl">✓</span>
               <span className="text-gray-700">Complete in 2 weeks</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-green-600 text-xl">✓</span>
-              <span className="text-gray-700">From RM 2,500</span>
             </div>
           </div>
 

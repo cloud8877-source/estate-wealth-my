@@ -64,6 +64,96 @@ const questions = [
       { text: "Getting this done quickly with minimal hassle", value: "busy-achiever", persona: "busy-achiever" },
       { text: "A fresh start with proper protection in place", value: "life-changer", persona: "life-changer" }
     ]
+  },
+  {
+    id: 7,
+    question: "When you think about your assets, what is your primary thought?",
+    options: [
+      { text: "My children's education and needs must be fully funded.", value: "concerned-parent", persona: "concerned-parent" },
+      { text: "How can I protect my business and investments from taxes or lawsuits?", value: "wealth-builder", persona: "wealth-builder" },
+      { text: "I just need a simple list of my assets to get this task done and filed away.", value: "busy-achiever", persona: "busy-achiever" },
+      { text: "I need to figure out who owns what, now that my life situation has changed.", value: "life-changer", persona: "life-changer" }
+    ]
+  },
+  {
+    id: 8,
+    question: "What's the ideal first step in this planning process for you?",
+    options: [
+      { text: "A clear explanation of how to appoint a guardian for my children.", value: "concerned-parent", persona: "concerned-parent" },
+      { text: "A deep analysis of my financial structure and tax liabilities.", value: "wealth-builder", persona: "wealth-builder" },
+      { text: "An online tool I can complete in 20 minutes to see my gaps.", value: "busy-achiever", persona: "busy-achiever" },
+      { text: "A simple consultation to understand my new responsibilities.", value: "life-changer", persona: "life-changer" }
+    ]
+  },
+    {
+    id: 9,
+    question: "What part of your family situation feels most urgent to plan for?",
+    options: [
+      { text: "My children are minors and depend entirely on me.", value: "concerned-parent", persona: "concerned-parent" },
+      { text: "I have multiple businesses or properties that need a clear succession plan.", value: "wealth-builder", persona: "wealth-builder" },
+      { text: "I simply haven't done anything, and the unresolved task is bothering me.", value: "busy-achiever", persona: "busy-achiever" },
+      { text: "I just got married/divorced/had a baby and my old documents are now useless.", value: "life-changer", persona: "life-changer" }
+    ]
+  },
+  {
+    id: 10,
+    question: "When you hear 'estate planning,' what tool or concept comes to mind first?",
+    options: [
+      { text: "A trust to protect my children's inheritance until they are adults.", value: "concerned-parent", persona: "concerned-parent" },
+      { text: "A holding structure to protect my business and investment portfolio.", value: "wealth-builder", persona: "wealth-builder" },
+      { text: "An efficient online platform to get it all done fast.", value: "busy-achiever", persona: "busy-achiever" },
+      { text: "A simple will that reflects my new life status.", value: "life-changer", persona: "life-changer" }
+    ]
+  },
+  {
+    id: 11,
+    question: "What event would most likely trigger you to complete your plan?",
+    options: [
+      { text: "Hearing a sad story about a friend's children after they passed.", value: "concerned-parent", persona: "concerned-parent" },
+      { text: "Acquiring a new, significant asset (like a new business or property).", value: "wealth-builder", persona: "wealth-builder" },
+      { text: "Realizing it's taking up mental energy not having it done.", value: "busy-achiever", persona: "busy-achiever" },
+      { text: "A major change in my marital or family status (birth, death, marriage).", value: "life-changer", persona: "life-changer" }
+    ]
+  },
+  {
+    id: 12,
+    question: "What's your main priority when choosing an executor for your will?",
+    options: [
+      { text: "Choosing someone who loves my children and shares my values.", value: "concerned-parent", persona: "concerned-parent" },
+      { text: "Appointing a professional or corporate trustee to manage complex assets.", value: "wealth-builder", persona: "wealth-builder" },
+      { text: "Someone who is organized, efficient, and will settle things quickly.", value: "busy-achiever", persona: "busy-achiever" },
+      { text: "Someone who understands my new family structure (e.g., new spouse).", value: "life-changer", persona: "life-changer" }
+    ]
+  },
+  {
+    id: 13,
+    question: "My single biggest fear is...",
+    options: [
+      { text: "My children not being raised by the person I choose.", value: "concerned-parent", persona: "concerned-parent" },
+      { text: "My business failing because there's no clear succession plan.", value: "wealth-builder", persona: "wealth-builder" },
+      { text: "My family having to deal with years of frozen accounts and paperwork.", value: "busy-achiever", persona: "busy-achiever" },
+      { text: "My old will benefiting the wrong person after my life changed.", value: "life-changer", persona: "life-changer" }
+    ]
+  },
+  {
+    id: 14,
+    question: "What does 'peace of mind' look like to you?",
+    options: [
+      { text: "Knowing my children's guardianship and financial future are secure.", value: "concerned-parent", persona: "concerned-parent" },
+      { text: "Knowing my wealth is structured intelligently for an orderly transfer.", value: "wealth-builder", persona: "wealth-builder" },
+      { text: "Having a completed plan, filed away, so I can move on to the next thing.", value: "busy-achiever", persona: "busy-achiever" },
+      { text: "Finally having a plan that reflects my current reality.", value: "life-changer", persona: "life-changer" }
+    ]
+  },
+  {
+    id: 15,
+    question: "What part of the 'paperwork' seems most annoying?",
+    options: [
+      { text: "Figuring out the legal details of a trust for my kids.", value: "concerned-parent", persona: "concerned-parent" },
+      { text: "The complexity of documenting all my different business assets.", value: "wealth-builder", persona: "wealth-builder" },
+      { text: "The thought of having to attend multiple, long, in-person meetings.", value: "busy-achiever", persona: "busy-achiever" },
+      { text: "Finding all my old documents, which are now outdated.", value: "life-changer", persona: "life-changer" }
+    ]
   }
 ];
 

@@ -23,7 +23,7 @@ export default function HowItWorks() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Take Quiz or Assessment</h3>
               <p className="text-gray-600 mb-4">
-                Answer 6 quick questions (2 min) or complete our comprehensive assessment (15 min)
+                Answer 15 quick questions (2 min) or complete our comprehensive assessment (15 min)
               </p>
               <div className="text-sm text-primary-600 font-semibold">
                 ⚡ Done 100% online • No commitment

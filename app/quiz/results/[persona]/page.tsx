@@ -24,8 +24,8 @@ const resultsData = {
       "Set up EPF and insurance beneficiary nominations"
     ],
     recommendedServices: [
-      "Will with Guardianship Clause (RM 2,500)",
-      "Testamentary Trust for Children (RM 5,000)",
+      "Will with Guardianship Clause",
+      "Testamentary Trust for Children",
       "Life Insurance Review (Complimentary)"
     ],
     testimonial: {
@@ -58,9 +58,9 @@ const resultsData = {
       "Receive digital + physical copies with secure storage"
     ],
     recommendedServices: [
-      "Fast-Track Will Package (RM 3,500)",
-      "Digital Estate Planning Suite (RM 4,500)",
-      "Express Trust Setup via RHB Trustee (RM 8,000)"
+      "Fast-Track Will Package",
+      "Digital Estate Planning Suite",
+      "Express Trust Setup"
     ],
     testimonial: {
       quote: "As a doctor, I barely have time to sleep. Estate Wealth My's process was incredibly efficient - one video call, some online forms, and they had my will ready in 10 days. Finally, something that respects my time!",
@@ -81,24 +81,24 @@ const resultsData = {
       "Estates over RM 2 million benefit significantly from trust structures",
       "Business assets need separate succession planning from personal assets",
       "Trusts provide privacy (avoid public probate) and tax efficiency",
-      "Our RHB Trustee partnership ensures professional, regulated management",
+      "Our trustee partnership ensures professional, regulated management",
       "Multi-generational planning protects wealth for your grandchildren"
     ],
     nextSteps: [
       "Download our comprehensive Asset Protection Strategies Guide",
       "Review trust structures comparison (Living Trust vs Testamentary Trust)",
       "Book strategic consultation to map your wealth structure",
-      "Explore RHB Trustee Bhd partnership benefits",
+      "Explore trustee partnership benefits",
       "Develop customized multi-generational wealth transfer plan"
     ],
     recommendedServices: [
-      "Comprehensive Will + Trust Package (RM 15,000)",
-      "Business Succession Planning (RM 12,000)",
-      "RHB Living Trust Setup (From RM 20,000)",
-      "Tax Optimization Review (RM 5,000)"
+      "Comprehensive Will + Trust Package",
+      "Business Succession Planning",
+      "Living Trust Setup",
+      "Tax Optimization Review"
     ],
     testimonial: {
-      quote: "I own 3 businesses and substantial property. Estate Wealth My worked with my accountant and lawyer to create a sophisticated structure using RHB Trustee. Their tech tools helped map everything clearly. This is the level of service high-net-worth individuals need.",
+      quote: "I own 3 businesses and substantial property. Estate Wealth My worked with my accountant and lawyer to create a sophisticated structure using a trustee. Their tech tools helped map everything clearly. This is the level of service high-net-worth individuals need.",
       author: "Dato' Richard Lee",
       detail: "Business owner, RM 8M estate value"
     },
@@ -127,10 +127,10 @@ const resultsData = {
       "Get personalized roadmap for your new chapter"
     ],
     recommendedServices: [
-      "Estate Plan Update Package (RM 2,000)",
-      "Fresh Start Will + Trust Bundle (RM 6,500)",
-      "Post-Divorce Estate Restructuring (RM 4,000)",
-      "New Parents Protection Package (RM 5,500)"
+      "Estate Plan Update Package",
+      "Fresh Start Will + Trust Bundle",
+      "Post-Divorce Estate Restructuring",
+      "New Parents Protection Package"
     ],
     testimonial: {
       quote: "After my divorce, I had no idea where to start. Estate Wealth My walked me through every step - removing my ex from beneficiaries, updating my will, protecting my kids' inheritance. They made a stressful time so much easier.",
