@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
+import WhatsAppButton from '@/components/ui/WhatsAppButton';
 
 export default function CTA() {
   return (
@@ -21,8 +22,8 @@ export default function CTA() {
             Get your personalized estate plan in 2 weeks. Not 2 months.
           </p>
 
-          {/* Two-Path CTA */}
-          <div className="grid md:grid-cols-2 gap-6 mb-10">
+          {/* Three-Path CTA */}
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
             {/* Quick Quiz Path */}
             <div className="bg-white text-gray-900 rounded-lg p-8 shadow-2xl">
               <div className="text-5xl mb-4">⚡</div>
@@ -57,6 +58,26 @@ export default function CTA() {
               </Link>
               <p className="text-sm text-gray-500">
                 ✓ Detailed gap analysis • PDF report
+              </p>
+            </div>
+
+            {/* WhatsApp Chat Path */}
+            <div className="bg-white text-gray-900 rounded-lg p-8 shadow-2xl">
+              <div className="text-5xl mb-4">💬</div>
+              <h3 className="text-2xl font-bold mb-3">Chat with Expert</h3>
+              <p className="text-gray-600 mb-6">
+                Prefer to talk first? Chat with our estate planning advisor on WhatsApp
+              </p>
+              <WhatsAppButton
+                variant="inline"
+                size="lg"
+                className="w-full mb-4"
+                message="Hi! I'm interested in learning more about estate planning services."
+              >
+                WhatsApp Us Now
+              </WhatsAppButton>
+              <p className="text-sm text-gray-500">
+                ✓ Instant response • Human advisor
               </p>
             </div>
           </div>
