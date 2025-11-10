@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Script from 'next/script';
+import WhatsAppButton from '@/components/ui/WhatsAppButton';
 
 const faqs = [
   {
@@ -112,12 +113,13 @@ export default function FAQ() {
           <p className="text-xl text-gray-700 mb-4 font-semibold">
             Still have questions? We're here to help.
           </p>
-          <a
-            href="/contact"
-            className="inline-block bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
+          <WhatsAppButton
+            variant="inline"
+            size="lg"
+            message="Hi! I have some questions about estate planning in Malaysia."
           >
-            Get Free Consultation
-          </a>
+            💬 Chat with Us on WhatsApp
+          </WhatsAppButton>
         </div>
       </div>
     </section>
