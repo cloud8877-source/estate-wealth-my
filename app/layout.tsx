@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
+import localFont from "next/font/local";
 import "@/styles/globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import Script from "next/script";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
+const playfair = Playfair_Display({ subsets: ["latin"], variable: '--font-playfair' });
+const hallelujah = localFont({
+  src: "./fonts/Hallelujah.ttf",
+  variable: "--font-hallelujah",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://estatewealthmy.com'),
@@ -14,7 +21,7 @@ export const metadata: Metadata = {
     default: "Estate Planning Malaysia | Will Writing & Trust Services for Non-Muslims | Estate Wealth My",
     template: "%s | Estate Wealth My - Estate Planning Malaysia"
   },
-  description: "Malaysia's #1 tech-powered estate planning for non-Muslim families. Will writing from RM 2,500. Complete in 2 weeks. RHB Trustee partner. 500+ families protected. Free consultation.",
+  description: "Malaysia's premier tech-enabled estate planning firm. Secure your assets and guardianship in 2 weeks.",
   keywords: [
     "estate planning malaysia",
     "will writing malaysia",
@@ -160,7 +167,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} flex flex-col min-h-screen`}>
+      <body className={`${inter.variable} ${playfair.variable} ${hallelujah.variable} font-sans bg-brand-cream text-slate-600 antialiased flex flex-col min-h-screen`}>
         <Header />
         <main className="flex-grow">
           {children}
