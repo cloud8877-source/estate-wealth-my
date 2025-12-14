@@ -1,5 +1,6 @@
 import React from 'react';
 import { MessageSquare } from 'lucide-react';
+import Link from 'next/link';
 
 const NewCTA = () => {
   return (
@@ -11,9 +12,9 @@ const NewCTA = () => {
             <p className="text-slate-600">Take our diagnostic quiz to find your ideal protection profile.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-            <button className="px-8 py-4 bg-brand-900 text-white hover:bg-brand-800 rounded-sm font-medium transition-colors text-center">
+            <Link href="/quiz" className="px-8 py-4 bg-brand-900 text-white hover:bg-brand-800 rounded-sm font-medium transition-colors text-center">
               Take 2-Min Quiz
-            </button>
+            </Link>
             <button className="px-8 py-4 border border-brand-900 text-brand-900 hover:bg-brand-900 hover:text-white rounded-sm font-medium transition-colors flex items-center justify-center gap-2">
               <MessageSquare className="w-4 h-4" /> WhatsApp Advisor
             </button>

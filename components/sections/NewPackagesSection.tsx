@@ -1,6 +1,6 @@
 import React from 'react';
 import { Check, CheckCircle2 } from 'lucide-react';
-import { CardSpotlight } from '@/components/ui/card-spotlight';
+import { CardSpotlight } from '@/components/ui/CardSpotlight';
 
 const NewPackagesSection = () => {
   return (

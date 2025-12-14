@@ -1,8 +1,11 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Button from '@/components/ui/Button';
+
+const VALID_PERSONAS = ['concerned-parent', 'wealth-builder', 'busy-achiever', 'life-changer'] as const;
+type Persona = typeof VALID_PERSONAS[number];
 
 const questions = [
   {
@@ -162,6 +165,16 @@ export default function QuizQuestionsPage() {
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Cleanup timeout on unmount to prevent memory leaks
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   const handleAnswer = (questionId: number, value: string) => {
     setAnswers(prev => ({ ...prev, [questionId]: value }));
@@ -183,39 +196,62 @@ export default function QuizQuestionsPage() {
 
   const handleSubmit = async () => {
     setIsLoading(true);
-    // Simulate API call
-    setTimeout(() => {
-      // Calculate result based on answers
-      const score = calculateScore(answers);
-      router.push(`/quiz/results/${score}`);
+    // Simulate API call with proper cleanup
+    timeoutRef.current = setTimeout(() => {
+      try {
+        const persona = calculateScore(answers);
+        // Validate persona before navigation
+        if (VALID_PERSONAS.includes(persona as Persona)) {
+          router.push(`/quiz/results/${persona}`);
+        } else {
+          console.error('Invalid persona calculated:', persona);
+          router.push('/quiz/results/concerned-parent'); // Safe fallback
+        }
+      } catch (error) {
+        console.error('Error calculating quiz results:', error);
+        router.push('/quiz/results/concerned-parent'); // Safe fallback
+      }
     }, 2000);
   };
 
-  const calculateScore = (answers: Record<number, string>) => {
+  const calculateScore = (answers: Record<number, string>): string => {
+    // Priority order for tie-breaking (most common profile first)
+    const PERSONA_PRIORITY: Persona[] = ['concerned-parent', 'wealth-builder', 'busy-achiever', 'life-changer'];
+
     // Count persona selections
-    const personaCounts: Record<string, number> = {
+    const personaCounts: Record<Persona, number> = {
       'concerned-parent': 0,
       'wealth-builder': 0,
       'busy-achiever': 0,
       'life-changer': 0
     };
 
+    let validAnswerCount = 0;
     Object.values(answers).forEach(answer => {
-      if (personaCounts.hasOwnProperty(answer)) {
-        personaCounts[answer]++;
+      if (VALID_PERSONAS.includes(answer as Persona)) {
+        personaCounts[answer as Persona]++;
+        validAnswerCount++;
+      } else {
+        console.warn('Unrecognized quiz answer:', answer);
       }
     });
 
-    // Find persona with highest count
-    let maxCount = 0;
-    let winningPersona = 'concerned-parent'; // default
+    // Log warning if no valid answers
+    if (validAnswerCount === 0) {
+      console.error('No valid answers in quiz submission');
+    }
 
-    Object.entries(personaCounts).forEach(([persona, count]) => {
-      if (count > maxCount) {
-        maxCount = count;
+    // Find persona with highest count using priority order for tie-breaking
+    let maxCount = 0;
+    let winningPersona: Persona = 'concerned-parent'; // default
+
+    // Iterate in priority order so ties favor earlier personas
+    for (const persona of PERSONA_PRIORITY) {
+      if (personaCounts[persona] > maxCount) {
+        maxCount = personaCounts[persona];
         winningPersona = persona;
       }
-    });
+    }
 
     return winningPersona;
   };
@@ -224,7 +260,7 @@ export default function QuizQuestionsPage() {
   const isLastQuestion = currentQuestion === questions.length - 1;
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
+    <div className="min-h-screen bg-brand-cream py-16">
       <div className="container mx-auto px-4 max-w-3xl">
         {/* Progress Bar */}
         <div className="mb-8">
@@ -236,7 +272,7 @@ export default function QuizQuestionsPage() {
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2">
             <div 
-              className="bg-primary-600 h-2 rounded-full transition-all duration-300"
+              className="bg-brand-gold h-2 rounded-full transition-all duration-300"
               style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
             ></div>
           </div>
@@ -244,27 +280,29 @@ export default function QuizQuestionsPage() {
 
         {/* Question Card */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-primary-900 mb-6">
+          <h2 className="text-2xl font-bold text-brand-900 mb-6">
             {questions[currentQuestion].question}
           </h2>
           
           <div className="space-y-4">
             {questions[currentQuestion].options.map((option, index) => (
-              <label 
+              <label
                 key={index}
+                htmlFor={`q${questions[currentQuestion].id}-opt${index}`}
                 className={`flex items-center p-4 rounded-lg border-2 cursor-pointer transition-all hover:bg-gray-50 ${
                   answers[questions[currentQuestion].id] === option.value
-                    ? 'border-primary-600 bg-primary-50'
+                    ? 'border-brand-gold bg-brand-gold/10'
                     : 'border-gray-200'
                 }`}
               >
                 <input
                   type="radio"
+                  id={`q${questions[currentQuestion].id}-opt${index}`}
                   name={`question-${questions[currentQuestion].id}`}
                   value={option.value}
                   checked={answers[questions[currentQuestion].id] === option.value}
                   onChange={() => handleAnswer(questions[currentQuestion].id, option.value)}
-                  className="mr-4 text-primary-600 focus:ring-primary-500"
+                  className="mr-4 text-brand-gold focus:ring-brand-gold"
                 />
                 <span className="text-gray-700 font-medium">{option.text}</span>
               </label>
@@ -278,6 +316,7 @@ export default function QuizQuestionsPage() {
             variant="outline"
             onClick={handlePrevious}
             disabled={currentQuestion === 0}
+
           >
             Previous
           </Button>

@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     description: "Malaysia's #1 tech-powered estate planning. Will writing from RM 2,500. Complete in 2 weeks. 500+ families protected.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Estate Wealth My - Estate Planning Malaysia"
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Estate Planning Malaysia | Estate Wealth My",
     description: "Tech-powered estate planning for Malaysian families. From RM 2,500. Complete in 2 weeks.",
-    images: ["/og-image.jpg"]
+    images: ["/og-image.png"]
   },
   robots: {
     index: true,
@@ -80,9 +80,10 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
+  // Note: Add Google verification code when site is verified
+  // verification: {
+  //   google: "your-google-verification-code",
+  // },
   alternates: {
     canonical: "https://estatewealthmy.com"
   }
@@ -113,7 +114,7 @@ export default function RootLayout({
               "name": "Estate Wealth My",
               "description": "Tech-powered estate planning services for non-Muslim families in Malaysia",
               "url": "https://estatewealthmy.com",
-              "telephone": "+60-12-345-6789",
+              "telephone": "+60-10-882-8127",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Kuala Lumpur",
@@ -125,7 +126,7 @@ export default function RootLayout({
                 "longitude": "101.686855"
               },
               "priceRange": "RM 2500 - RM 50000",
-              "image": "https://estatewealthmy.com/og-image.jpg",
+              "image": "https://estatewealthmy.com/og-image.png",
               "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "4.9",
@@ -158,7 +159,7 @@ export default function RootLayout({
               ],
               "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+60-12-345-6789",
+                "telephone": "+60-10-882-8127",
                 "contactType": "customer service",
                 "areaServed": "MY",
                 "availableLanguage": ["English", "Malay", "Chinese"]

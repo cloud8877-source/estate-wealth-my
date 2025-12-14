@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
-import { DottedGlowBackground } from '@/components/ui/dotted-glow-background';
+import { DottedGlowBackground } from '@/components/ui/DottedGlowBackground';
 import Link from 'next/link';
 
 const NewHero = () => {
@@ -37,7 +37,7 @@ const NewHero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="#quiz" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-sm transition-all duration-300 bg-brand-gold text-white hover:bg-brand-goldHover shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+            <Link href="/quiz" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-sm transition-all duration-300 bg-brand-gold text-white hover:bg-brand-goldHover shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
               Start Assessment (2 Min) 
               <ArrowRight className="ml-2 w-4 h-4" />
             </Link>

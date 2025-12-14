@@ -1,9 +1,12 @@
 'use client';
 
 import { ButtonHTMLAttributes, ReactNode } from 'react'
-import { motion } from 'framer-motion'
+import { motion, HTMLMotionProps } from 'framer-motion'
 
-interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onDrag' | 'onDragEnd' | 'onDragStart'> {
+// Omit props that conflict between native button and Framer Motion
+type ConflictingProps = 'onAnimationStart' | 'onDrag' | 'onDragEnd' | 'onDragStart' | 'onAnimationEnd';
+
+interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, ConflictingProps> {
   variant?: 'primary' | 'secondary' | 'outline'
   size?: 'sm' | 'md' | 'lg'
   children: ReactNode
@@ -21,9 +24,9 @@ export default function Button({
   const baseStyles = 'font-medium rounded-lg transition-all duration-200 disabled:opacity-50'
   
   const variantStyles = {
-    primary: 'bg-primary-600 text-white hover:bg-primary-700',
+    primary: 'bg-brand-gold text-white hover:bg-brand-goldHover',
     secondary: 'bg-gray-200 text-gray-900 hover:bg-gray-300',
-    outline: 'border-2 border-primary-600 text-primary-600 hover:bg-primary-50',
+    outline: 'border-2 border-brand-gold text-brand-gold hover:bg-brand-gold/10',
   }
   
   const sizeStyles = {
@@ -38,7 +41,7 @@ export default function Button({
       whileTap={{ scale: 0.98 }}
       className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
       disabled={loading}
-      {...(props as any)}
+      {...props}
     >
       {loading ? (
         <span className="flex items-center gap-2">

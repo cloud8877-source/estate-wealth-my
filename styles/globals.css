@@ -66,3 +66,64 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Print Styles for PDF Export */
+@media print {
+  /* Hide elements marked as no-print */
+  .no-print,
+  header,
+  footer,
+  nav {
+    display: none !important;
+  }
+
+  /* Reset background for printing */
+  body {
+    background-color: white !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Preserve colors in print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Prevent page breaks inside important elements */
+  .break-inside-avoid {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Show print-only elements */
+  .print\\:block {
+    display: block !important;
+  }
+
+  /* Hide interactive elements */
+  button,
+  a[href^="mailto"],
+  a[href^="tel"] {
+    pointer-events: none;
+  }
+
+  /* Ensure proper page margins */
+  @page {
+    margin: 1cm;
+    size: A4;
+  }
+
+  /* Ensure background colors print */
+  .bg-brand-cream,
+  .bg-brand-gold,
+  .bg-white,
+  .bg-red-50,
+  .bg-green-50,
+  .bg-blue-100,
+  .bg-purple-100 {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

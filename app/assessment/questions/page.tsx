@@ -1,8 +1,11 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Button from '@/components/ui/Button';
+
+const VALID_LEVELS = ['comprehensive', 'detailed', 'focused', 'urgent'] as const;
+type AssessmentLevel = typeof VALID_LEVELS[number];
 
 const assessmentQuestions = [
   // CATEGORY 1: FAMILY STRUCTURE (10 questions) - Max 20 points
@@ -597,6 +600,16 @@ export default function AssessmentQuestionsPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
   const router = useRouter();
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Cleanup timeout on unmount to prevent memory leaks
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   const handleAnswer = (questionId: number, value: string, isMultiple: boolean = false) => {
     if (isMultiple) {
@@ -627,11 +640,22 @@ export default function AssessmentQuestionsPage() {
 
   const handleSubmit = async () => {
     setIsLoading(true);
-    
-    // Simulate processing time
-    setTimeout(() => {
-      const assessment = calculateAssessment(answers);
-      router.push(`/assessment/results/${assessment}`);
+
+    // Simulate processing time with proper cleanup
+    timeoutRef.current = setTimeout(() => {
+      try {
+        const level = calculateAssessment(answers);
+        // Validate level before navigation
+        if (VALID_LEVELS.includes(level as AssessmentLevel)) {
+          router.push(`/assessment/results/${level}`);
+        } else {
+          console.error('Invalid assessment level calculated:', level);
+          router.push('/assessment/results/focused'); // Safe fallback
+        }
+      } catch (error) {
+        console.error('Error calculating assessment results:', error);
+        router.push('/assessment/results/focused'); // Safe fallback
+      }
     }, 3000);
   };
 

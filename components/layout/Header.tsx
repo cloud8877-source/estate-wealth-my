@@ -31,6 +31,7 @@ const Header = () => {
             <Link href="#services" className={`text-sm font-medium transition-colors ${isScrolled ? 'text-slate-600 hover:text-brand-900' : 'text-slate-300 hover:text-white'}`}>Services</Link>
             <Link href="#process" className={`text-sm font-medium transition-colors ${isScrolled ? 'text-slate-600 hover:text-brand-900' : 'text-slate-300 hover:text-white'}`}>Process</Link>
             <Link href="#testimonials" className={`text-sm font-medium transition-colors ${isScrolled ? 'text-slate-600 hover:text-brand-900' : 'text-slate-300 hover:text-white'}`}>Stories</Link>
+            <Link href="/resources" className={`text-sm font-medium transition-colors ${isScrolled ? 'text-slate-600 hover:text-brand-900' : 'text-slate-300 hover:text-white'}`}>Resources</Link>
             <Link href="#" className="px-6 py-2.5 text-sm font-medium text-white bg-brand-900 rounded-sm hover:bg-brand-800 transition-all shadow-sm hover:shadow-md">
               Client Portal
             </Link>
@@ -53,6 +54,7 @@ const Header = () => {
             <Link href="#services" className="text-sm font-medium text-slate-600 hover:text-brand-900 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Services</Link>
             <Link href="#process" className="text-sm font-medium text-slate-600 hover:text-brand-900 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Process</Link>
             <Link href="#testimonials" className="text-sm font-medium text-slate-600 hover:text-brand-900 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Stories</Link>
+            <Link href="/resources" className="text-sm font-medium text-slate-600 hover:text-brand-900 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Resources</Link>
             <Link href="#" className="px-6 py-2.5 text-sm font-medium text-white bg-brand-900 rounded-sm hover:bg-brand-800 transition-all shadow-sm text-center" onClick={() => setIsMobileMenuOpen(false)}>
               Client Portal
             </Link>
