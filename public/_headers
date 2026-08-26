@@ -1,0 +1,4 @@
+# Keep the *.pages.dev twin (and preview deployments) out of search/AI indexes;
+# the custom domain is unaffected (host-scoped rule).
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
